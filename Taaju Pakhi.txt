@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Forex Pro Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom Animations */
+    .fade-in { animation: fadeIn 1.5s ease-in-out; }
+    @keyframes fadeIn { from { opacity:0; transform: translateY(20px);} to { opacity:1; transform: translateY(0);} }
+    .pulse-hover:hover { transform: scale(1.05); transition: all 0.3s ease-in-out; }
+  </style>
+</head>
+<body class="bg-yellow-400 text-black font-sans">
+
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center px-10 py-4 bg-yellow-300 fixed w-full z-50 border-b border-yellow-500">
+    <div class="flex items-center space-x-3">
+      <div class="text-black-400 font-extrabold text-2xl tracking-wide"> Exnesslite </div>
+      <div class="text-gray-400 text-xs mt-1">Designed by Dr Taaj Khan</div>
+    </div>
+    <ul class="hidden md:flex space-x-8 text-sm font-medium">
+      <li><a href="#home" class="hover:text-yellow-400">Home</a></li>
+      <li><a href="#features" class="hover:text-yellow-400">Features</a></li>
+      <li><a href="#plans" class="hover:text-yellow-400"></>Accounts</li>
+      <li><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
+    </ul>
+    <button class="hidden md:block bg-yellow-400 text-black px-5 py-2 rounded-md font-semibold hover:opacity-90">Register</button>
+  </nav>
+
+  <!-- Hero Section -->
+
+  <section id="home" class="h-screen flex items-center bg-yellow-500 pt-20">
+    <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-12 items-center">
+      <div class="fade-in">
+        <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
+          Trade with a <span class="text-black">Leading</span><br>Forex Platform
+        </h1>
+        <p class="mt-6 text-black text-lg">Ultra-fast execution, low spreads, and secure trading environment.</p>
+        <div class="mt-8 flex space-x-4">
+          <a href="#login" class="bg-black text-yellow-400 px-8 py-4 rounded-md font-bold hover:opacity-90">Sign In</a>
+          <a href="#login" id="heroCreateBtn" class="border border-black px-8 py-4 rounded-md hover:bg-black hover:text-yellow-400">Create Account</a>
+        </div>
+        <div class="mt-10 flex space-x-10 text-sm text-black">
+          <div><span class="font-semibold">1.1</span> pips spreads</div>
+          <div><span class="font-semibold">1:Unlimited</span> leverage</div>
+          <div><span class="font-semibold">24/7</span> support</div>
+        </div>
+      </div>
+      <div class="hidden md:block fade-in">
+        <img src="https://images.unsplash.com/photo-1642543492481-44e81e3914a8?auto=format&fit=crop&w=900&q=80" class="rounded-xl shadow-2xl" alt="Trading" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Exness Style Login Section (Full Page) -->
+  <section id="login" class="min-h-screen flex flex-col items-center justify-center bg-white py-20">
+
+    <!-- Logo -->
+    <div class="mb-8 text-3xl font-extrabold tracking-wide">Exnesslite</div>
+
+    <!-- Card -->
+    <div class="w-full max-w-md bg-white p-10 rounded-xl shadow-xl">
+      <h2 class="text-2xl font-bold text-center mb-8">Welcome to Exnesslite</h2>
+
+      <!-- Tabs -->
+      <div class="flex justify-center space-x-10 mb-8 border-b">
+        <button id="tabSignIn" class="pb-2 border-b-2 border-black font-semibold">Sign in</button>
+        <button id="tabRegister" class="pb-2 text-gray-400">Create an account</button>
+      </div>
+
+      <!-- Sign In Form -->
+      <form id="signInForm" class="space-y-6">
+        <div>
+          <label class="block text-sm mb-1">Your email address</label>
+          <input type="email" class="w-full border px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400" placeholder="example@gmail.com" required>
+        </div>
+
+        <div>
+          <label class="block text-sm mb-1">Password</label>
+          <input type="password" class="w-full border px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400" placeholder="********" required>
+        </div>
+
+        <button type="submit" class="w-full bg-yellow-400 py-3 rounded-md font-bold hover:opacity-90">Sign in</button>
+
+        <div class="text-center text-sm text-gray-500">Or sign in with</div>
+
+        <button type="button" class="w-full border py-3 rounded-md flex items-center justify-center space-x-2 hover:bg-gray-100">
+          <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5" />
+          <span>Google</span>
+        </button>
+
+        <div class="text-center mt-4">
+          <a href="#" class="text-sm text-blue-600 hover:underline">I forgot my password</a>
+        </div>
+      </form>
+
+      <!-- Register Form -->
+      <form id="registerForm" class="space-y-6 hidden">
+        <div>
+          <label class="block text-sm mb-1">Full Name</label>
+          <input type="text" class="w-full border px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400" placeholder="Your name" required>
+        </div>
+
+        <div>
+          <label class="block text-sm mb-1">Email address</label>
+          <input type="email" class="w-full border px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400" placeholder="example@gmail.com" required>
+        </div>
+
+        <div>
+          <label class="block text-sm mb-1">Password</label>
+          <input type="password" class="w-full border px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400" placeholder="********" required>
+        </div>
+
+        <div>
+          <label class="block text-sm mb-1">Confirm Password</label>
+          <input type="password" class="w-full border px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400" placeholder="********" required>
+        </div>
+
+        <button type="submit" class="w-full bg-black text-yellow-400 py-3 rounded-md font-bold hover:opacity-90">Create Account</button>
+      </form>
+    </div>
+
+    <!-- Footer text like Exness -->
+    <p class="text-xs text-gray-500 max-w-2xl text-center mt-10 px-6">
+      Trading in CFDs involves risk. Please trade responsibly. This is a demo UI inspired by Exness design.
+    </p>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-24 px-6 md:px-24 bg-yellow-300">
+    <h2 class="text-4xl font-bold text-center mb-16 fade-in">Platform Features</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="bg-gray-700 rounded-lg p-8 text-center fade-in pulse-hover">
+        <h3 class="text-2xl font-semibold mb-4">Fast Execution</h3>
+        <p>Experience lightning-fast trade execution without delays or slippage.</p>
+      </div>
+      <div class="bg-gray-700 rounded-lg p-8 text-center fade-in pulse-hover">
+        <h3 class="text-2xl font-semibold mb-4">Advanced Platform</h3>
+        <p>Trade using MetaTrader 4/5 or our cutting-edge web platform with ease.</p>
+      </div>
+      <div class="bg-gray-700 rounded-lg p-8 text-center fade-in pulse-hover">
+        <h3 class="text-2xl font-semibold mb-4">24/7 Support</h3>
+        <p>Our expert support team is available around the clock to assist you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Account Plans Section -->
+  <section id="plans" class="py-24 px-6 md:px-24 bg-yellow-400">
+    <h2 class="text-4xl font-bold text-center mb-16 fade-in">Account Types</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="bg-gray-800 rounded-lg p-8 text-center fade-in pulse-hover">
+        <h4 class="text-2xl font-semibold mb-4">Standard Account</h4>
+        <p>Low minimum deposit, suitable for beginners. Spreads from 1.2 pips.</p>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-8 text-center fade-in pulse-hover">
+        <h4 class="text-2xl font-semibold mb-4">Pro Account</h4>
+        <p>Designed for experienced traders. Spreads from 0.0 pips, commission applies.</p>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-8 text-center fade-in pulse-hover">
+        <h4 class="text-2xl font-semibold mb-4">ECN Account</h4>
+        <p>Direct market access with ultra-low spreads and high liquidity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Market Cards Section -->
+  <section class="py-24 px-6 md:px-24 bg-yellow-300">
+    <h2 class="text-4xl font-bold text-center mb-16 fade-in">Live Market Prices</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-gray-700 rounded-lg p-6 text-center fade-in pulse-hover">
+        <h4 class="font-semibold text-xl mb-2">EUR/USD</live>
+        <p class="text-green-400 text-2xl">1.0912</p>
+      </div>
+      <div class="bg-gray-700 rounded-lg p-6 text-center fade-in pulse-hover">
+        <h4 class="font-semibold text-xl mb-2">GBP/USD</live>
+        <p class="text-green-400 text-2xl">1.3015</p>
+      </div>
+      <div class="bg-gray-700 rounded-lg p-6 text-center fade-in pulse-hover">
+        <h4 class="font-semibold text-xl mb-2">USD/JPY<live>
+        <p class="text-red-400 text-2xl">134.45</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 px-6 md:px-24 bg-yellow-400">
+    <h2 class="text-4xl font-bold text-center mb-16 fade-in">Contact Us</h2>
+    <form class="max-w-lg mx-auto flex flex-col space-y-6 fade-in">
+      <input type="text" placeholder="Your Name" class="p-4 rounded-lg border-none" required>
+      <input type="email" placeholder="Your Email" class="p-4 rounded-lg border-none" required>
+      <textarea rows="5" placeholder="Your Message" class="p-4 rounded-lg border-none" required></textarea>
+      <button type="submit" class="p-4 bg-yellow-400 text-gray-900 font-semibold rounded-lg pulse-hover">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-yellow-300 p-6 text-center">
+    &copy; 2026 Exnesslite. All rights reserved.
+  </footer>
+
+  <script>
+  // Smooth scroll
+  document.querySelectorAll('nav ul li a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Login / Register Tab Switch
+  const tabSignIn = document.getElementById('tabSignIn');
+  const tabRegister = document.getElementById('tabRegister');
+  const signInForm = document.getElementById('signInForm');
+  const registerForm = document.getElementById('registerForm');
+  const heroCreateBtn = document.getElementById('heroCreateBtn');
+
+  if (tabSignIn && tabRegister) {
+    tabRegister.addEventListener('click', () => {
+      signInForm.classList.add('hidden');
+      registerForm.classList.remove('hidden');
+      tabRegister.classList.remove('text-gray-400');
+      tabRegister.classList.add('border-b-2','border-black','font-semibold');
+      tabSignIn.classList.add('text-gray-400');
+      tabSignIn.classList.remove('border-b-2','border-black','font-semibold');
+    });
+
+    tabSignIn.addEventListener('click', () => {
+      registerForm.classList.add('hidden');
+      signInForm.classList.remove('hidden');
+      tabSignIn.classList.remove('text-gray-400');
+      tabSignIn.classList.add('border-b-2','border-black','font-semibold');
+      tabRegister.classList.add('text-gray-400');
+      tabRegister.classList.remove('border-b-2','border-black','font-semibold');
+    });
+  }
+
+  // Hero Create Account -> Open Register Tab
+  if(heroCreateBtn){
+    heroCreateBtn.addEventListener('click', () => {
+      setTimeout(() => {
+        tabRegister.click();
+      }, 300);
+    });
+  }
+</script>
+
+</body>
+</html>
